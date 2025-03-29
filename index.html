@@ -7,18 +7,45 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Метод filter в JavaScript</h1>
 
-    <h2 class="title__two">Колледж</h2>
-    <input type="text" id="search" placeholder="Найти товар">
-    <select id="category">
-        <option value="all">Все</option>
-        <option value="prog">Программирование</option>
-        <option value="math">Математика</option>
-        <option value="gumtar">Гуманитарные</option>
-    </select>
     
-    <div id="teather"></div>
+    <h1>Лекция: Фильтры в JavaScript</h1>
+
+    <p>Что такое filter</p>
+    <p>Метод filter() для массива создает копию заданного массива, в которой остаются только элементы, соответствующие условию.
+    </p>
+    <p>Метод includes() для массива определяет, содержит ли массив определенное значение, которое было передано методу, возвращая true или false.
+    </p>
+    
+    <div class="wrapper">
+        <div class="container">
+            <p>Первый пример</p>
+            <p>Это пример поиска слов <br>Введите одно из эти слов:яблоко, банан, апельсин, арбуз, ананас, груша </p>
+            <div class="primer__one">
+                <input type="text" id="searchInput" placeholder="Введите начало фрукта">
+                <button onclick="search()">Найти</button>
+                <p id="result"></p>
+            </div>
+            <p>Второй пример</p>
+            <p>Этот пример включает в себя поиск и сортировку в массиве. В данном примере есть название прдемета и преподаветль. Чтобы найти конкретный предмет или преподавателя можно вользоваться поиском, или воспоьзоваться строгой сортировкой</p>
+            <div class="primer__one">
+                <h2 class="title__two">Колледж</h2>
+                <input type="text" id="search" placeholder="Найти товар">
+                <select id="category">
+                    <option value="all">Все</option>
+                    <option value="prog">Программирование</option>
+                    <option value="math">Математика</option>
+                    <option value="gumtar">Гуманитарные</option>
+                </select>
+            
+                <div id="teather"></div>
+            </div>
+        </div>
+    </div>
+
+
+   
+
 
 
     <script src="app.js"></script>

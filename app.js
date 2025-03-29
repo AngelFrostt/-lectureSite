@@ -33,3 +33,20 @@ searchInput.addEventListener("input", teathers);
 categorySelect.addEventListener("change", teathers);
 
 teathers(); 
+
+
+const words = ["яблоко", "банан", "апельсин", "арбуз", "ананас", "груша"];
+
+  function search() {
+    const input = document.getElementById("searchInput").value.toLowerCase();
+    const filteredWords = words.filter(word => 
+      word.toLowerCase().startsWith(input)
+    );
+
+    const resultElement = document.getElementById("result");
+    if (filteredWords.length > 0) {
+      resultElement.textContent = `Найдено: ${filteredWords.join(", ")}`;
+    } else {
+      resultElement.textContent = "Ничего не найдено";
+    }
+  }
