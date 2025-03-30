@@ -1,3 +1,5 @@
+//пример с поиском и сортировкой
+
 const prepods = [
     { name: "Проектирование и разработка веб-приложений, Дывыдов Д О", category: "prog" },
     { name: "Обеспечение безопасности веб-приложений, Гусев И О", category: "prog" },
@@ -34,19 +36,55 @@ categorySelect.addEventListener("change", teathers);
 
 teathers(); 
 
+//пример найти слова, где больше 6 букв
 
-const words = ["яблоко", "банан", "апельсин", "арбуз", "ананас", "груша"];
+const words = ["яблоко", "трамвай", "гиппопотомонстросескипедалофобия", "клавиатура", "сыр"];
+        
+        function filterWords() {
+            const result = words.filter((word) => word.length > 6);
+            document.getElementById("result__one").textContent = `Найдено: ${result.join(", ")}`;
+        }
 
-  function search() {
-    const input = document.getElementById("searchInput").value.toLowerCase();
-    const filteredWords = words.filter(word => 
-      word.toLowerCase().startsWith(input)
-    );
 
-    const resultElement = document.getElementById("result");
-    if (filteredWords.length > 0) {
-      resultElement.textContent = `Найдено: ${filteredWords.join(", ")}`;
-    } else {
-      resultElement.textContent = "Ничего не найдено";
-    }
+//пример поиск по ф и
+
+const names = ["яблоко", 
+  "Антонов Максим ", 
+  "Безрукова Ксения ", 
+  "Бодрова Арина ", 
+  "Васильев Степан ", 
+  "Волков Павел ",
+  "Выборнов Александр ",
+  "Выборнов Дмитрий",
+  "Гендеров Максим (он же в академе!)",
+  "Еремин Руслан ",
+  "Зайцев Артём ",
+  "Камардина Эмма ",
+  "Миненко Кирилл ",
+  "Морозова Ангелина ",
+  "Музыка Алексей ",
+  "Мухин Андрей ",
+  "Наумова Анастасия ",
+  "Новикова Элла ",
+  "Нуруллина Сафия ",
+  "Панин Александр ",
+  "Разинков Антон ",
+  "Темчура Анастасия ",
+  "Утин Кирилл ",
+  "Фунин Антон ",
+  "Хамидуллова Милена ",
+  "Хохлов Илья "
+];
+
+function search() {
+  const input = document.getElementById("searchInput").value.toLowerCase().trim();
+  const filteredNames = names.filter(names => names.toLowerCase().includes(input));
+
+  const resultElement = document.getElementById("result__two");
+  if (filteredNames.length > 0) {
+    resultElement.innerHTML = `Найдено: ${filteredNames.join(", ")}`;
+  } else {
+    resultElement.textContent = "Такого у нас нету";
   }
+}
+
